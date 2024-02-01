@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/jetpackFirstFragment">
+
+    <fragment
+        android:id="@+id/jetpackFirstFragment"
+        android:name="com.example.jetpacknavigation.JetpackFirstFragment"
+        android:label="fragment_jetpack_first"
+        tools:layout="@layout/fragment_jetpack_first" >
+        <action
+            android:id="@+id/action_jetpackFirstFragment_to_jetpackSecondFragment"
+            app:destination="@id/jetpackSecondFragment"
+            app:enterAnim="@anim/nav_default_pop_enter_anim"
+            app:exitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
+    <fragment
+        android:id="@+id/jetpackSecondFragment"
+        android:name="com.example.jetpacknavigation.JetpackSecondFragment"
+        android:label="fragment_jetpack_second"
+        tools:layout="@layout/fragment_jetpack_second" >
+        <action
+            android:id="@+id/action_jetpackSecondFragment_to_jetpackThirdFragment"
+            app:destination="@id/jetpackThirdFragment"
+            app:enterAnim="@anim/nav_default_pop_enter_anim"
+            app:exitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpTo="@id/jetpackFirstFragment"
+            app:popUpToInclusive="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/jetpackThirdFragment"
+        android:name="com.example.jetpacknavigation.JetpackThirdFragment"
+        android:label="fragment_jetpack_third"
+        tools:layout="@layout/fragment_jetpack_third" />
+</navigation>
